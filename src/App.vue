@@ -14,7 +14,8 @@ import HomeViewVue from "./views/HomeView.vue";
         <RouterLink to="/"><li>Home</li></RouterLink> 
         <RouterLink to="/about"><li>About</li></RouterLink>
         <RouterLink to="/signup"><li>Signup</li></RouterLink>
-        <RouterLink to="/signin"><li>Sign in</li></RouterLink>
+        <RouterLink to="/signin" v-if = "this.$store.state.signed_in ==false"><li>Sign in</li></RouterLink>
+        <RouterLink to="/signin" v-else ><li>Sign Out</li></RouterLink>
 
       </ul>
     </nav>

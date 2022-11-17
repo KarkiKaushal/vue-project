@@ -3,7 +3,8 @@
     <div>
       User Details <br/>
       Id = {{this.$store.state.user.id}} <br/>
-      Email = {{this.$store.state.user.email}}
+      Email = {{this.$store.state.user.email}}<br/>
+      Signed In = {{this.$store.state.signed_in}}
     </div>
     <div>
     <button @click="logout()">Logout</button><br/>

@@ -35,6 +35,7 @@ export default {
         console.log(data);
         this.$store.state.user.id =data.data.id
         this.$store.state.user.email = data.data.email
+        this.$store.state.signed_in =true
         if (data.msg ="Logged in Successfully")
            alert("Login Successful")
            router.replace({path: '/about'})
