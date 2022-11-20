@@ -33,13 +33,22 @@ export default {
         const resp = await fetch("http://localhost:3000/sessions",requestOptions);
         const data = await resp.json()
         console.log(data);
-        this.$store.state.user.id =data.data.id
-        this.$store.state.user.email = data.data.email
-        this.$store.state.signed_in =true
+        this.$store.state.user.id =data.data.id;
+        this.$store.state.user.email = data.data.email;
+        this.$store.state.signed_in =true;
+        // this.savelocal;
+        localStorage.userId = this.$store.state.user.id;
+        localStorage.userEmail = this.$store.state.user.email;
+        localStorage.signed_in = this.$store.state.signed_in;
         if (data.msg ="Logged in Successfully")
            alert("Login Successful")
            router.replace({path: '/about'})
 
+    },
+    savelocal(){
+      console.log("hello");
+      localStorage.user = this.$store.state.user;
+      localStorage.signed_in = this.$store.state.signed_in;
     }
   }
 }

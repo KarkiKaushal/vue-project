@@ -1,19 +1,16 @@
 <template>
   <div id="about">
-    <div>
-      User Details <br/>
+    <div id="left-about">
+      <img id ="pp" src="https://plus.unsplash.com/premium_photo-1663050629719-83e16832a804?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmlsZXxlbnwwfHwwfHw%3D&auto=format&fit=crop&w=800&q=60" alt="pic"/>
+    </div>
+    <div id="right-about">
+      <h1>User Details</h1> <br/>
       Id = {{this.$store.state.user.id}} <br/>
       Email = {{this.$store.state.user.email}}<br/>
       Signed In = {{this.$store.state.signed_in}}
     </div>
     <div>
-    <button @click="logout()">Logout</button><br/>
-    <input type="text" v-model=email /><br/>
-    <button @click="userDetails()">Find User</button>
-    <h1>{{value}}</h1>
-    <h2>{{this.$store.state.count}}</h2>
-    <button @click="increment()">Add</button><br/>
-    <button @click="set()">Set</button><br/>
+   
 
     </div>
     
@@ -24,8 +21,31 @@
 <style>
 #about{
   width: 100%;
-  display: grid;
+  height: 90vh;
+  min-height: 30rem;
+  /* display: g; */
+  background-color:aquamarine;
 }
+#pp{
+  height: 25rem;
+  width: 40%;
+  padding: 5% 0 0 5% ;
+}
+#left-about{
+width: 49%;
+float: left;
+border: 1px solid black;
+}
+#right-about{
+  width: 49%;
+  float: right;
+  /* padding: 5% 0 0 1%; */
+  border: 1px solid black;
+  text-align: center;
+  /* height: 100vh; */
+
+}
+
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
@@ -80,10 +100,5 @@ export default {
       this.$store.commit('increment')
     },
   },
-  computed:{
-    
-
-    
-  }
 }
 </script>

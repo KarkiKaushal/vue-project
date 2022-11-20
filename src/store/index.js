@@ -10,6 +10,7 @@ const store = createStore({
         signed_in: false
       }
     },
+   
     mutations: {
       increment (state) {
         state.count=state.count+5
